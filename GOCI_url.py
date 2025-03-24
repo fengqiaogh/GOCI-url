@@ -4,7 +4,7 @@ from datetime import datetime
 
 class GOCI_URL:
     def __init__(self, datetime: datetime):
-        self.KOSC_L1_path = "https://kosc.kiost.ac.kr/download/downService.do?fileName=/home/goci/nfsdb/COMS/GOCI/L1/"
+        self.KOSC_L1_path = "https://kosc.kiost.ac.kr/download/downService.do?fileName=/home/goci/nfsdb/COMS/GOCI/L1"
 
         self.datetime = datetime
         self.hour = []
@@ -52,7 +52,7 @@ class GOCI_URL:
     def get_L1B_url(self):
         for filename in self.L1B_filename:
             self.L1B_url.append(
-                f"{self.KOSC_L1_path}/{self.datetime.year}/{self.datetime.month}/{self.datetime.day}/L1B/{filename}.zip"
+                f"{self.KOSC_L1_path}/{self.datetime.year}/{self.datetime.month:>02d}/{self.datetime.day:>02d}/L1B/{filename}.zip"
             )
 
     def get_L1B_filename(self):
